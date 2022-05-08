@@ -1,28 +1,15 @@
-// console.log("app!");
-// console.log("app!");
-// console.log("app!");
+const { read, write } = require('./helper')
 
-// function test() {
-//   console.log('test!');
-// }
+console.log('start');
 
-// test()
-// test()
-// test()
+const request = process.argv[2]
 
-// setTimeout(()=>{
-//   console.log('timer');
-// }, 1000)
+if (request === 'read') {
+  read()
+} else if (request === 'write') {
+  write()
+} else {
+  console.error('err!');
+}
 
-// setTimeout(()=>{
-//   console.log('timer');
-// }, 1000)
-
-// setTimeout(()=>{
-//   console.log('timer');
-// }, 1000)
-
-const { name, add } = require('./helper')
-
-console.log(name)
-console.log(add(2, 3))
+console.log('end');

@@ -1,9 +1,18 @@
-const name = 'Mike'
-const add = function (a, b) {
-  return a + b
+const fs = require('fs')
+
+const read = () => {
+  fs.readFile('./sample.txt','utf8' , (err, data) => {
+      console.log(data);
+  })
+}
+
+const write = () => {
+  fs.writeFile('sample.txt', 'hello', () => {
+    console.log('write!');
+  })
 }
 
 module.exports = {
-  name: name,
-  add: add,
+  read: read,
+  write: write,
 }
